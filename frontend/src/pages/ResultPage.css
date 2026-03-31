@@ -1,0 +1,120 @@
+.result-wrap {
+  width: 100%;
+  max-width: 880px;
+}
+
+.result-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.result-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  letter-spacing: -0.03em;
+}
+
+.result-sub {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.98rem;
+}
+
+.result-card {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 1.1rem;
+  padding: 1.5rem 1.75rem;
+  background: linear-gradient(135deg, #ffffff 0%, #fbf7ef 60%, #f4ead7 100%);
+  border: 1px solid rgba(201, 155, 75, 0.35);
+  border-radius: 18px;
+  margin-bottom: 1rem;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.04);
+}
+
+.result-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(201, 155, 75, 0.14);
+  border: 1px solid rgba(201, 155, 75, 0.5);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.result-title {
+  margin: 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.01em;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.result-section-title {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.result-text {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.product-grid {
+  margin-top: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(227, 222, 213, 0.9);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.product-name {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.product-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.coupon-btn {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: var(--accent);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius);
+  box-shadow: 0 14px 30px rgba(201, 155, 75, 0.35);
+}
+
+.coupon-btn:hover {
+  background: var(--accent-hover);
+}
+
+.result-hint {
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 720px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

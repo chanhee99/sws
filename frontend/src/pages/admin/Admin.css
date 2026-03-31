@@ -1,0 +1,339 @@
+.admin-section {
+  width: 100%;
+  max-width: 900px;
+}
+
+.admin-section h2 {
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.admin-section h3 {
+  font-size: 1rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.admin-section h4 {
+  font-size: 0.95rem;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--text-muted);
+}
+
+.admin-filters {
+  margin-bottom: 1rem;
+}
+
+.admin-filters label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.admin-filters select {
+  padding: 0.5rem 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius);
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-table th {
+  font-weight: 600;
+  color: var(--text-muted);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tbody tr:hover {
+  background: rgba(99, 102, 241, 0.04);
+}
+
+.admin-btn-sm {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  background: var(--accent);
+  color: white;
+  border-radius: var(--radius);
+}
+
+.admin-btn-sm:hover {
+  background: var(--accent-hover);
+}
+
+.admin-btn-secondary {
+  padding: 0.5rem 1rem;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+.admin-btn-secondary:hover {
+  background: var(--border);
+}
+
+.admin-pagination {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.admin-pagination button {
+  padding: 0.4rem 0.8rem;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.admin-pagination button:hover:not(:disabled) {
+  background: var(--border);
+}
+
+.admin-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-loading,
+.admin-error,
+.admin-muted {
+  padding: 1rem 0;
+  color: var(--text-muted);
+}
+
+.admin-error {
+  color: var(--error);
+}
+
+.admin-detail-meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.admin-detail-meta dt {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.admin-detail-meta dd {
+  margin: 0;
+}
+
+.admin-answers ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-answer-item {
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 0.75rem;
+}
+
+.admin-answer-question {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--text);
+}
+
+.admin-answer-value {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+}
+
+.admin-stats {
+  margin-top: 1rem;
+}
+
+.admin-total-responses {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.admin-chart-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.5rem 0 1rem;
+}
+
+.admin-chart-wrap .recharts-wrapper {
+  min-width: 200px;
+}
+
+.admin-question-stat {
+  margin-bottom: 2rem;
+}
+
+.admin-text-answers {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.admin-text-answers li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-tabs button {
+  padding: 0.75rem 1.25rem;
+  background: none;
+  color: var(--text-muted);
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  font-weight: 500;
+}
+
+.admin-tabs button:hover {
+  color: var(--text);
+}
+
+.admin-tabs button.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.admin-survey-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.admin-survey-list {
+  width: 100%;
+}
+
+.admin-survey-editor {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.admin-form-row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 0.75rem;
+  align-items: start;
+  font-size: 0.9rem;
+}
+
+.admin-input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius);
+}
+
+.admin-form-row select {
+  padding: 0.6rem 0.75rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius);
+}
+
+.admin-question-editor {
+  padding: 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.admin-question-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.admin-options {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.admin-option-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.admin-link-btn {
+  background: transparent;
+  color: var(--text);
+  padding: 0;
+  font-weight: 600;
+  text-align: left;
+}
+
+.admin-link-btn:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .admin-survey-grid {
+    grid-template-columns: 1fr;
+  }
+}

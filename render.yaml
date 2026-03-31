@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: survey-backend
+    runtime: docker
+    plan: free
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: IMWEB_API_KEY
+        sync: false
+      - key: IMWEB_API_SECRET
+        sync: false
+      - key: IMWEB_API_BASE
+        value: https://api.imweb.me
+      - key: IMWEB_API_VERSION
+        value: latest
+      - key: IMWEB_COUPON_ISSUE_PATH
+        value: /v2/shop/coupons/issue
+      - key: IMWEB_COUPON_ISSUE_MEMBER_KEY
+        value: memberId
+      - key: IMWEB_COUPON_ISSUE_COUPON_CODE_KEY
+        value: couponCode
+

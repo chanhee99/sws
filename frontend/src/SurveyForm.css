@@ -1,0 +1,164 @@
+.form-wrap {
+  width: 100%;
+  max-width: none;
+}
+
+.back-btn {
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+}
+
+.back-btn:hover {
+  color: var(--accent);
+}
+
+.form-header {
+  margin-bottom: 1.75rem;
+}
+
+.form-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+}
+
+.form-desc {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.survey-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.question-block {
+  padding: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin: 0;
+}
+
+.question-block legend {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  padding: 0;
+}
+
+.required {
+  color: var(--error);
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  .options.options--grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem 1.25rem;
+  }
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.option-label input[type="radio"],
+.option-label input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--accent);
+}
+
+.input-short {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.input-long {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-error {
+  color: var(--error);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.btn-secondary {
+  padding: 0.75rem 1.25rem;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: var(--border);
+}
+
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.success-box {
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 400px;
+}
+
+.success-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--success);
+  margin: 0 0 0.5rem;
+}
+
+.success-sub {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}

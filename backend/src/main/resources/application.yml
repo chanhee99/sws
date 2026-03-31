@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: survey-api
+  datasource:
+    url: jdbc:h2:file:./data/survey;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: 8080
+
+# 개발용 샘플 설문 자동 생성 여부
+# 관리자에서 직접 설문을 만들려면 false로 두세요.
+app:
+  seed-demo: false
+  # 아임웹 로그인 회원 중 관리자로 허용할 식별자(uid 또는 member_code 등, 쉼표 구분).
+  # 비어 있으면 /api/admin 검사를 하지 않습니다(로컬 개발용).
+  imweb:
+    admin-member-ids: ""
+
+# 아임웹 iframe 연동 시 CORS 허용
+cors:
+  allowed-origins: "*"
