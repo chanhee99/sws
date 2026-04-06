@@ -50,6 +50,7 @@
   font-size: 1rem;
   margin-bottom: 0.75rem;
   padding: 0;
+  line-height: 1.35;
 }
 
 .required {
@@ -72,10 +73,11 @@
 
 .option-label {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.75rem;
   cursor: pointer;
-  padding: 0.5rem 0;
+  padding: 0.55rem 0;
+  line-height: 1.35;
 }
 
 .option-label input[type="radio"],
@@ -83,6 +85,7 @@
   width: 1.15rem;
   height: 1.15rem;
   accent-color: var(--accent);
+  margin-top: 0.1rem;
 }
 
 .input-short {
@@ -105,6 +108,11 @@
   min-height: 100px;
 }
 
+.input-short:focus,
+.input-long:focus {
+  border-color: var(--accent);
+}
+
 .form-error {
   color: var(--error);
   font-size: 0.9rem;
@@ -116,6 +124,16 @@
   gap: 0.75rem;
   justify-content: flex-end;
   margin-top: 0.5rem;
+}
+
+@media (max-width: 720px) {
+  .form-actions {
+    position: sticky;
+    bottom: 0;
+    padding: 0.85rem 0;
+    background: linear-gradient(to bottom, rgba(247, 245, 242, 0), rgba(247, 245, 242, 0.95) 25%, rgba(247, 245, 242, 1));
+    backdrop-filter: blur(6px);
+  }
 }
 
 .btn-secondary {

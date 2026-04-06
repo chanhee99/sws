@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { api } from '../api'
 import type { SurveyDto } from '../types'
 import { SurveyForm } from '../SurveyForm'
+import { readImwebIdentity } from '../imwebIdentity'
 import '../App.css'
 
 export function SurveyParticipantPage() {
@@ -12,22 +13,7 @@ export function SurveyParticipantPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  // Aimyweb 로그인 연동 시, 로그인된 회원 식별자를 URL/스토리지에서 찾아 넘깁니다.
-  // (예: URL ?respondentId=..., 또는 localStorage에 imweb_respondent_id 저장)
-  const respondentId = (() => {
-    try {
-      const sp = new URLSearchParams(location.search)
-      return (
-        sp.get('respondentId') ||
-        sp.get('memberId') ||
-        localStorage.getItem('imweb_respondent_id') ||
-        localStorage.getItem('imweb_member_id') ||
-        undefined
-      )
-    } catch {
-      return undefined
-    }
-  })()
+  const { respondentId, isLoggedIn } = readImwebIdentity(location.search)
 
   useEffect(() => {
     api.getSurveys()
@@ -55,8 +41,20 @@ export function SurveyParticipantPage() {
     <div className="app">
       <header className="header">
         <h1>설문조사</h1>
-        <p className="subtitle">참여할 설문을 선택해 주세요.</p>
+        <p className="subtitle">
+          {isLoggedIn ? '참여할 설문을 선택해 주세요.' : '아임웹에 로그인한 회원만 참여할 수 있습니다.'}
+        </p>
       </header>
+      {!isLoggedIn && (
+        <div className="notice-card">
+          <div className="notice-title">로그인이 필요합니다</div>
+          <div className="notice-body">
+            스와니브 홈페이지에서 로그인한 뒤 다시 접속해 주세요.
+            <br />
+            (임베드 시, 로그인 회원의 식별자(memberUid)를 URL의 `respondentId` 또는 localStorage로 전달해야 합니다.)
+          </div>
+        </div>
+      )}
       <ul className="survey-list">
         {surveys.map((s) => (
           <li key={s.id}>
@@ -64,6 +62,7 @@ export function SurveyParticipantPage() {
               type="button"
               className="survey-card"
               onClick={() => setSelectedId(s.id)}
+              disabled={!isLoggedIn}
             >
               <span className="survey-title">{s.title}</span>
               {s.description && <span className="survey-desc">{s.description}</span>}

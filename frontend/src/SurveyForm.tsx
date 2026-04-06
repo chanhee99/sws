@@ -40,8 +40,14 @@ export function SurveyForm({ surveyId, respondentId, onBack }: Props) {
     })
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    const form = e.currentTarget
+    if (!form.checkValidity()) {
+      form.reportValidity()
+      setError('필수 문항을 입력해 주세요.')
+      return
+    }
     if (!survey) return
     const answerList: AnswerInput[] = survey.questions.map((q) => {
       const v = answers[q.id]

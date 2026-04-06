@@ -26,12 +26,13 @@ body {
   min-height: 100vh;
 }
 
+/* iframe 임베드용: ?embed=1 인 경우 부모 페이지 배경이 보이도록 처리 가능 */
+body[data-embed="1"] {
+  background: transparent;
+}
+
 #root {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem 1rem;
 }
 
 button {

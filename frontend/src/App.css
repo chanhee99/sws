@@ -4,12 +4,25 @@
   flex-direction: column;
 }
 
+.app-shell--embed {
+  min-height: auto;
+}
+
 .top-nav {
   display: flex;
   gap: 1rem;
   padding: 0.75rem 1.5rem;
   background: var(--surface);
   border-bottom: 1px solid var(--border);
+}
+
+.top-nav-inner {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .top-nav a {
@@ -25,15 +38,25 @@
 
 main {
   flex: 1;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem 2.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.app-shell--embed main {
+  padding: 0.75rem 0.75rem 1.25rem;
+}
+
 .app {
   width: 100%;
   max-width: 1100px;
+}
+
+@media (min-width: 900px) {
+  main {
+    padding: 2rem 1.5rem 3rem;
+  }
 }
 
 /* keep pages on a consistent frame width */
@@ -60,9 +83,22 @@ main {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 0.75rem;
+}
+
+@media (min-width: 900px) {
+  .survey-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .survey-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .survey-card {
@@ -74,6 +110,34 @@ main {
   text-align: left;
   color: var(--text);
   transition: border-color 0.2s, background 0.2s;
+  min-height: 104px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.survey-card:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.notice-card {
+  border: 1px solid var(--border);
+  background: rgba(201, 155, 75, 0.08);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  margin: -0.5rem 0 1.25rem;
+}
+
+.notice-title {
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+.notice-body {
+  color: var(--text-muted);
+  line-height: 1.45;
+  font-size: 0.95rem;
 }
 
 .survey-card:hover {
@@ -85,6 +149,7 @@ main {
   display: block;
   font-weight: 600;
   font-size: 1.05rem;
+  line-height: 1.25;
 }
 
 .survey-desc {
@@ -92,6 +157,11 @@ main {
   color: var(--text-muted);
   font-size: 0.875rem;
   margin-top: 0.35rem;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .empty {
